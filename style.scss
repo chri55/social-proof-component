@@ -1,0 +1,284 @@
+$dark-magenta: hsl(300, 43%, 22%);
+$soft-pink: hsl(333, 80%, 67%);
+
+$dark-grayish-magenta: hsl(303, 10%, 53%);
+$light-grayish-magenta: hsl(300, 24%, 96%);
+$white: hsl(0, 0%, 100%);
+
+@mixin d-flex($orient:row, $wrap:wrap, $justify:flex-start, $align:flex-start) {
+  display: flex;
+  flex-flow: $orient $wrap;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@keyframes pop-in {
+  0% {transform: scale(0);}
+  75% {transform: scale(1.4);}
+  100% {transform:scale(1);}
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+* {
+  box-sizing: border-box;
+  font-size: 1rem;
+  font-family: "Spartan", sans-serif;
+  color: $dark-magenta;
+  line-height: 1.8;
+}
+
+body {
+  @include d-flex(column, nowrap, center, center);
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.row {
+  @include d-flex(row, nowrap, flex-start, flex-start);
+}
+
+.column {
+  @include d-flex(column, nowrap, flex-start, flex-start);
+}
+
+.high {
+  align-self: flex-start;
+}
+
+.middle {
+  align-self: center;
+}
+
+.low {
+  align-self: flex-end;
+}
+
+.mobile {
+  display: none;
+}
+
+.desktop {
+  position: absolute;
+  z-index: -1;
+  &.top-bg {
+    top: 0;
+    left: 0;
+  }
+  &.bottom-bg {
+    bottom: 0;
+    right: 0;
+  }
+}
+
+.main {
+  height: 100%;
+  width: 100%;
+  padding: 10%;
+  padding-bottom: 0;
+}
+
+.main > .row {
+  width: 100%;
+}
+
+.hero {
+  height: 50%;
+  justify-content: space-between;
+}
+
+.hero-text {
+  height: 100%;
+  width: 40%;
+  *{ 
+    line-height: 1.2;
+  }
+}
+
+.reviews {
+  height: 100%;
+  justify-content: space-evenly;
+  width: 50%;
+  margin-left: auto;
+}
+
+.star-card {
+  height: 56px;
+  width: 80%;
+  padding: 10px 0;
+  justify-content: space-evenly;
+  align-items: center;
+  background: $light-grayish-magenta;
+  border-radius: 10px;
+  * {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+  }
+}
+
+.stars img {
+  animation-name: pop-in;
+  animation-duration: 0.3s;
+  animation-fill-mode: backwards;
+  &#first {
+    animation-delay: 0s;
+  }
+  &#second {
+    animation-delay: 0.2s;
+  }
+  &#third {
+    animation-delay: 0.4s;
+  }
+  &#fourth {
+    animation-delay: 0.6s;
+  }
+  &#fifth {
+    animation-delay: 0.8s;
+  }
+}
+
+.review-cards {
+  justify-content: space-around;
+  height: 40%;
+}
+
+.review-card {
+  width: 30%;
+  height: 75%;
+  background-color: $dark-magenta;
+  padding: 2%;
+  border-radius: 10px;
+  justify-content: space-around;
+
+  animation-name: slide-up;
+  animation-duration: 0.4s;
+  animation-fill-mode: backwards;
+
+  &.high {
+    animation-delay: 0.4s;
+  }
+  &.middle {
+    animation-delay: 0.6s;
+  }
+  &.low {
+    animation-delay: 0.8s;
+  }
+
+  * {
+    color: white;
+    font-size: 0.7rem;
+  }
+
+  .pink {
+    color: $soft-pink;
+  }
+}
+
+.buyer {
+  align-items: center;
+}
+
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  margin-right: 23px;
+}
+
+@media screen and (max-width: 1100px) {
+  .main {
+    padding: 5%;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .main {
+    padding-top: 10%;
+    padding-right: 10%;
+    padding-left: 10%;
+
+  }
+  .mobile {
+    display: block;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: auto;
+    &.top-bg {
+      top: 0;
+      left: 0;
+    }
+
+    &.bottom-bg {
+      right: 0;
+      bottom: 0;
+    }
+  }
+  .desktop {
+    display: none;
+    height: 0;
+    width: 0;
+  }
+  .hero,
+  .review-cards {
+    height: auto;
+    > *{
+      width: 100%;
+    }
+    * {
+    }
+  }
+
+  .hero-text {
+    margin-bottom: 10px;
+    * {
+      margin-bottom: 40px;
+      text-align: center;
+      font-size: 0.85rem;
+    }
+    h1 {
+      font-size: 1.5rem;
+    }
+  }
+
+  .star-card {
+    p {
+      font-size: 0.75rem;
+    }
+  }
+
+  .review-cards.row,
+  .hero.row   {
+    @include d-flex(column, nowrap, center, center);
+  }
+
+  .high, 
+  .middle, 
+  .low {
+    width: 100%;
+    margin-bottom: 50px;
+  }
+
+  .review-card {
+    height: auto;
+    padding: 10%;
+  }
+}
