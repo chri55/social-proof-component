@@ -127,10 +127,13 @@ h1 {
   align-items: center;
   background: $light-grayish-magenta;
   border-radius: 10px;
+  font-weight: 700;
   * {
     margin: 0;
     padding: 0;
     display: inline-block;
+    font-size: 0.75rem;
+
   }
 }
 

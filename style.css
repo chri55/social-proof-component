@@ -204,12 +204,14 @@ h1 {
           align-items: center;
   background: #f7f2f7;
   border-radius: 10px;
+  font-weight: 700;
 }
 
 .star-card * {
   margin: 0;
   padding: 0;
   display: inline-block;
+  font-size: 0.75rem;
 }
 
 .stars img {
