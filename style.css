@@ -184,11 +184,12 @@ h1 {
           justify-content: center;
 }
 
-.hero-text * {
+.hero-text h1 {
   line-height: 1.2;
 }
 
 .hero-text p {
+  line-height: 1.8;
   color: #937b92;
 }
 
