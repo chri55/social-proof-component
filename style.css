@@ -298,9 +298,15 @@ h1 {
 .review-card * {
   color: white;
   font-size: 0.7rem;
+  font-weight: 500;
+}
+
+.review-card .white {
+  font-weight: 700;
 }
 
 .review-card .pink {
+  font-weight: 400;
   color: #ee68a4;
 }
 

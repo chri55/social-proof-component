@@ -194,9 +194,15 @@ h1 {
   * {
     color: white;
     font-size: 0.7rem;
+    font-weight: 500;
+  }
+
+  .white {
+    font-weight: 700;
   }
 
   .pink {
+    font-weight: 400;
     color: $soft-pink;
   }
 }
