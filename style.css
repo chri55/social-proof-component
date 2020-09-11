@@ -382,6 +382,9 @@ h1 {
   .star-card p {
     font-size: 0.75rem;
   }
+  .stars img {
+    margin-right: 0;
+  }
   .review-cards.row,
   .hero.row {
     display: -webkit-box;

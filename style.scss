@@ -287,6 +287,10 @@ h1 {
     }
   }
 
+  .stars img {
+    margin-right: 0;
+  }
+
   .review-cards.row,
   .hero.row   {
     @include d-flex(column, nowrap, center, center);
