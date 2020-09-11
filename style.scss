@@ -147,19 +147,19 @@ h1 {
   animation-name: pop-in;
   animation-duration: 0.3s;
   animation-fill-mode: backwards;
-  &#first {
+  &.first {
     animation-delay: 0s;
   }
-  &#second {
+  &.second {
     animation-delay: 0.2s;
   }
-  &#third {
+  &.third {
     animation-delay: 0.4s;
   }
-  &#fourth {
+  &.fourth {
     animation-delay: 0.6s;
   }
-  &#fifth {
+  &.fifth {
     animation-delay: 0.8s;
   }
 }

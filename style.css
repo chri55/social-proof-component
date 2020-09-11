@@ -233,27 +233,27 @@ h1 {
           animation-fill-mode: backwards;
 }
 
-.stars img#first {
+.stars img.first {
   -webkit-animation-delay: 0s;
           animation-delay: 0s;
 }
 
-.stars img#second {
+.stars img.second {
   -webkit-animation-delay: 0.2s;
           animation-delay: 0.2s;
 }
 
-.stars img#third {
+.stars img.third {
   -webkit-animation-delay: 0.4s;
           animation-delay: 0.4s;
 }
 
-.stars img#fourth {
+.stars img.fourth {
   -webkit-animation-delay: 0.6s;
           animation-delay: 0.6s;
 }
 
-.stars img#fifth {
+.stars img.fifth {
   -webkit-animation-delay: 0.8s;
           animation-delay: 0.8s;
 }
