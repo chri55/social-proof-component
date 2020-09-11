@@ -225,6 +225,7 @@ h1 {
 }
 
 .stars img {
+  margin-right: 5px;
   -webkit-animation-name: pop-in;
           animation-name: pop-in;
   -webkit-animation-duration: 0.3s;
@@ -297,7 +298,7 @@ h1 {
 
 .review-card * {
   color: white;
-  font-size: 0.7rem;
+  font-size: 0.82rem;
   font-weight: 500;
 }
 
